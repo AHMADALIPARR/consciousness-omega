@@ -1,0 +1,12 @@
+:" SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-SnapKitty-Opaque-1.0 "
+:" Copyright Ahmad Ali Parr "
+Recurse badd:: {[x y]; (mp((x@0)+(y@0);Q); mp((x@1)+(y@1);Q))}
+bsub:: {[x y]; (mp(Q+(x@0)-(y@0);Q); mp(Q+(x@1)-(y@1);Q))}
+bmul:: {[x y d];
+  a:x@0; b:x@1; c:y@0; e:y@1;
+  ac:mp(a*c;Q); bd:mp(b*e;Q); ad:mp(a*e;Q); bc:mp(b*c;Q);
+  qmd:Q-d;
+  real: mp(ac + mp(d * bd; Q); Q);
+  imag: mp(ad + bc; Q);
+  [real, imag]
+}

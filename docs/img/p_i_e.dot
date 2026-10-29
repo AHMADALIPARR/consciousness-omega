@@ -1,0 +1,10 @@
+digraph PIE {
+  rankdir=LR; bgcolor="white"; nodesep=0.6; ranksep=1.1;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, margin="0.25,0.18", fillcolor="#eef3fb", color="#35507a"];
+  edge [fontname="Helvetica", fontsize=11, color="#35507a"];
+  P [label="P  Physical dynamics\nC*-dynamical systems\n(operator algebras)"];
+  I [label="I  Informational structures\nsheaves over a site\n(causal state networks)"];
+  E [label="E  Experiential structures\nsymmetric monoidal category\nwith internal hom", fillcolor="#fbeeee", color="#7a3535"];
+  P -> I [label="F  spectral synthesis"];
+  I -> E [label="G  not constructed", style=dashed, color="#7a3535", fontcolor="#7a3535"];
+}

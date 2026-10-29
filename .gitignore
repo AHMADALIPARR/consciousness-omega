@@ -1,0 +1,12 @@
+# build output
+.lake/
+build/
+dist-newstyle/
+.stack-work/
+*.agdai
+*.hi
+*.o
+*.olean
+_build/
+tools/
+.liquid/

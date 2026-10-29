@@ -1,0 +1,15 @@
+cabal-version:      2.4
+name:               consciousness-omega
+version:            0.1.0.0
+synopsis:           Algebraic token projection with Liquid Haskell refinements
+license:            AGPL-3.0-only
+author:             Ahmad Ali Parr
+build-type:         Simple
+
+library
+  hs-source-dirs:   haskell
+  exposed-modules:  AlgebraicTokenProjection
+  build-depends:    base ==4.18.1.0,
+                    liquidhaskell ==0.9.6.3.1
+  default-language: Haskell2010
+  ghc-options:      -fplugin=LiquidHaskell
