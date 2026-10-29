@@ -1,0 +1,18 @@
+P	tools/CBQN/BQN
+R	)ex bqn/entropy_kl_mutual_info.bqn
+R	Entropy 0.5‿0.5
+O	1
+R	0.5‿0.5 MutualInfo 0.25‿0.75
+O	0
+R	0.5‿0.5 KLDivergence 0.25‿0.75
+O	0.20751874963942185
+R	)ex bqn/f2_cohomology_telemetry.bqn
+R	{CohomologySig 𝕩 TempProject test_tensor}¨ test_nums
+O	⟨ 1 0 1 0 1 ⟩
+R	)off
+P	agda agda/AntProjectionInvariant.agda && echo ok
+A	Checking AntProjectionInvariant (/workspace/consciousness-omega/agda/AntProjectionInvariant.agda).
+O	ok
+P	agda agda/AntTensorProjectionProof.agda && echo ok
+A	Checking AntTensorProjectionProof (/workspace/consciousness-omega/agda/AntTensorProjectionProof.agda).
+O	ok

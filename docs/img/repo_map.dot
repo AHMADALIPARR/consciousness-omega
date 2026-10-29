@@ -1,0 +1,26 @@
+digraph repo {
+  rankdir=LR; bgcolor="white"; nodesep=0.35; ranksep=0.9; compound=true;
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, margin="0.18,0.10"];
+  edge [fontname="Helvetica", fontsize=10, color="#555555"];
+  subgraph cluster_bqn { label="BQN kernels  (bqn/)"; fontname="Helvetica-Bold"; color="#35507a"; style="rounded";
+    node [fillcolor="#eef3fb", color="#35507a"];
+    phi [label="Φ over partitions"]; ent [label="entropy · KL · mutual info"];
+    f2 [label="F2 cohomology telemetry"]; ant [label="recursive ant loop"];
+    ff [label="finite field mod Q\n(Mersenne, Z_Q[i])"]; swarm [label="functor loss · obstruction\nswarm sweep"]; }
+  subgraph cluster_hs { label="Haskell + Liquid Haskell"; fontname="Helvetica-Bold"; color="#5e4a8a"; style="rounded";
+    hs [label="AlgebraicTokenProjection\nGaussian integers · smash", fillcolor="#f1edf8", color="#5e4a8a"]; }
+  subgraph cluster_kg { label="Klong"; fontname="Helvetica-Bold"; color="#8a6a2a"; style="rounded";
+    kg [label="quadratic extension\nbadd · bsub · bmul", fillcolor="#fbf5e8", color="#8a6a2a"]; }
+  data [label="data/counterexamples.jsonl\ncycle 2 · cycle 5", shape=note, fillcolor="#fff8d6", color="#9a8a3a"];
+  subgraph cluster_agda { label="Agda statements"; fontname="Helvetica-Bold"; color="#2f6b46"; style="rounded";
+    node [fillcolor="#eaf6ee", color="#2f6b46"];
+    ag1 [label="ant tensor projection\nF2 pathway · kernel extension"]; ag2 [label="projection invariant\nthree-ant graph · β1"];
+    ag3 [label="Core · experiential functor\nnon-reductionist witness"]; }
+  subgraph cluster_lean { label="Lean 4 + Mathlib"; fontname="Helvetica-Bold"; color="#7a3535"; style="rounded";
+    node [fillcolor="#fbeeee", color="#7a3535"];
+    ln1 [label="KL ≥ 0 · P ≄ E"]; ln2 [label="functorial bridge template"]; }
+  f2 -> data [label="signatures"]; swarm -> data [label="obstructions"]; ant -> data;
+  data -> ag1; data -> ag2; ag1 -> ag3 [style=dashed];
+  ent -> ln1 [label="KL"]; phi -> ln2;
+  ff -> hs [label="same arithmetic", dir=both, style=dashed]; ff -> kg [dir=both, style=dashed];
+}
