@@ -20,12 +20,10 @@ Command: `tools/CBQN/BQN bqn/<file>.bqn`. A file that only defines things prints
 
 ## Lean 4 (v4.35.0, Mathlib v4.35.0)
 
-Mathlib was fetched with `lake update` and `lake exe cache get` (9031 cached files, about a minute). `lake build` then stops at the imports:
+Mathlib was fetched with `lake update` and `lake exe cache get` (9031 cached files, about a minute). After fixing the imports to real Mathlib v4.35.0 modules, `lake build` passes for both files with no `sorry`. `#print axioms` on both theorems lists only `propext`, `Classical.choice` and `Quot.sound`.
 
-- `ConsciousnessFormalization.lean`: `bad import 'Mathlib.Probability.InformationTheory.KullbackLeibler'`. Mathlib v4.35.0 has no module by that name; the KL file in this Mathlib is `Mathlib/InformationTheory/KullbackLeibler/Basic.lean`.
-- `FunctorialBridgeTemplate.lean`: `bad import 'Mathlib.InformationTheory.Entropy'`. No module by that name in this Mathlib.
-
-Lean did not get as far as the theorem bodies or the `sorry`, so there is no checker output for them.
+- `ConsciousnessFormalization.lean`: `kl_divergence_nonnegative` is proved with Gibbs' inequality (`log x ≤ x - 1`). `physical_experiential_non_equivalence` was false as stated and `Ω ⟶ (Ω ⟶ Ω)` did not type-check. The reflexive object is now `(Ω ⟶ Ω) ≃ ((Ω ⟶ Ω) → (Ω ⟶ Ω))`, and the theorem takes the extra hypothesis that P has no such object.
+- `FunctorialBridgeTemplate.lean`: `IsCPTP` did not exist, so it is now a field of `PhysicalSystem`. `⊗` needs `MonoidalCategory` instances on P and I, which `ExperientialMapping` now takes.
 
 ## Agda 2.6.4.3
 
